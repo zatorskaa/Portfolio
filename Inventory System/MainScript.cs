@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 /*
@@ -23,6 +24,9 @@ public class MainScript : MonoBehaviour
     private Environment environmentScript; //stores the environment script component of the environment object
     [SerializeField]
     private InventorySystem inventorySystem; //stores the inventory system object
+
+    [SerializeField]
+    private Text inventoryContentsText; //stores text component to show invenotry contents
 
     /*
      The ‘currentItemSelected’ stores the item that was right clicked by the mouse or that is being dragged by left clicking the mouse. The ‘currentSlotSelected’ stores the slot that was right clicked by the mouse or left clicked and dragged by the mouse. 
@@ -61,6 +65,7 @@ public class MainScript : MonoBehaviour
     private void Start()
     {
         environmentScript = environment.GetComponent<Environment>(); //gets the environment script component from the game objects
+        inventoryContentsText.text = ""; //resets text
     }
 
     /*
@@ -700,5 +705,16 @@ public class MainScript : MonoBehaviour
                 Debug.Log(numberOfItemTypes.ElementAt(i).Key + " (" + numberOfItemTypes[numberOfItemTypes.ElementAt(i).Key] + ")"); //print the number of each item to the debug log
             }
         }
+
+        //show inventory contents on screen
+        inventoryContentsText.text = numberOfItemTypes.ElementAt(0).Key + " (" + numberOfItemTypes[numberOfItemTypes.ElementAt(0).Key] + ")" + "   " +
+                                     numberOfItemTypes.ElementAt(1).Key + " (" + numberOfItemTypes[numberOfItemTypes.ElementAt(1).Key] + ")" + "   " +
+                                     numberOfItemTypes.ElementAt(2).Key + " (" + numberOfItemTypes[numberOfItemTypes.ElementAt(1).Key] + ")" + "   " +
+                                     numberOfItemTypes.ElementAt(3).Key + " (" + numberOfItemTypes[numberOfItemTypes.ElementAt(1).Key] + ")" + "   " +
+                                     numberOfItemTypes.ElementAt(4).Key + " (" + numberOfItemTypes[numberOfItemTypes.ElementAt(1).Key] + ")" + "   " +
+                                     numberOfItemTypes.ElementAt(5).Key + " (" + numberOfItemTypes[numberOfItemTypes.ElementAt(1).Key] + ")" + "   " +
+                                     numberOfItemTypes.ElementAt(6).Key + " (" + numberOfItemTypes[numberOfItemTypes.ElementAt(1).Key] + ")" + "   " +
+                                     numberOfItemTypes.ElementAt(7).Key + " (" + numberOfItemTypes[numberOfItemTypes.ElementAt(1).Key] + ")" + "   " +
+                                     numberOfItemTypes.ElementAt(8).Key + " (" + numberOfItemTypes[numberOfItemTypes.ElementAt(1).Key] + ")";
     }
 }
