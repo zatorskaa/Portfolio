@@ -1,5 +1,5 @@
 # Portfolio
 
-This is the GitHub page for my portfolio. It contains scripts that I have programmed. 
+This is the GitHub page for my portfolio.
 
 https://aleksandrazatorska.wixsite.com/portfolio
